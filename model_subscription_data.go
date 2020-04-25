@@ -17,8 +17,6 @@ type SubscriptionData struct {
 
 	NfStatusNotificationUri string `json:"nfStatusNotificationUri"`
 
-	SubscrCond OneOfNfInstanceIdCondNfTypeCondServiceNameCondAmfCondGuamiListCondNetworkSliceCondNfGroupCond `json:"subscrCond,omitempty"`
-
 	SubscriptionId string `json:"subscriptionId"`
 
 	ValidityTime time.Time `json:"validityTime,omitempty"`
