@@ -48,9 +48,12 @@ func (c *NFInstancesStoreApiController) Routes() Routes {
 // GetNFInstances - Retrieves a collection of NF Instances
 func (c *NFInstancesStoreApiController) GetNFInstances(w http.ResponseWriter, r *http.Request) { 
 	query := r.URL.Query()
-	nfType := query.Get("nfType")
-	limit := query.Get("limit")
-	result, err := c.service.GetNFInstances(nfType, limit)
+	targetnftype := query.Get("target-nf-type")
+	requesternftype := query.Get("requester-nf-type")
+	targetnfinstanceid := query.Get("target-nf-instance-id")
+	requesterplmnlist := query.Get("requester-plmn-list")
+	//limit := query.Get("limit")
+	result, err := c.service.GetNFInstances(targetnftype, limit)
 	if err != nil {
 		w.WriteHeader(500)
 		return
